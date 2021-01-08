@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mvgarciadockertest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvgarciadockertest
+  template:
+    metadata:
+      labels:
+        app: mvgarciadockertest 
+    spec:
+      containers:
+        - name: mvgarciadockertest 
+          image: pypure.azurecr.io/mvgarciadockertest
+          ports:
+          - containerPort: 80
